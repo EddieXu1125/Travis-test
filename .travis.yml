@@ -1,12 +1,26 @@
 language: bash
 
 before_install:
-    - sudo apt-get update && sudo apt-get install -y shellcheck
+  - sudo apt-get update && sudo apt-get install -y shellcheck
+  - sudo apt-get install imagemagick
+
 
 script:
-  - bash gcd.sh 25 5
-  - pwd
+  - ls -l
+  - bash ProcessImages.sh -h
+  - bash ProcessImages.sh -q ./img 90
+  - bash ProcessImages.sh -r ./img 90%
+  - bash ProcessImages.sh -w ./img xzl SouthEast 20 y
+  - bash ProcessImages.sh -p ./img Pre
+  - bash ProcessImages.sh -s ./img Suf
+  - bash ProcessImages.sh -t ./img
+  - echo "=============================="
 
 notifications:
   email:
     on_success: never
+
+
+
+
+
