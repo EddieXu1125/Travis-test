@@ -7,6 +7,9 @@ before_install:
 
 script:
   - ls -l
+  - shellcheck ProcessImages.sh
+  - echo Task1
+  - echo "=============================="
   - bash ProcessImages.sh -h
   - bash ProcessImages.sh -q ./img 90
   - bash ProcessImages.sh -r ./img 90%
@@ -15,6 +18,16 @@ script:
   - bash ProcessImages.sh -s ./img Suf
   - bash ProcessImages.sh -t ./img
   - echo "=============================="
+  - shellcheck Task2-ProcessFile.sh
+  - echo Task2
+  - echo "=============================="
+  - bash Task2-ProcessFile.sh -h
+  - bash Task2-ProcessFile.sh -a
+  - bash Task2-ProcessFile.sh -p
+  - bash Task2-ProcessFile.sh -n
+  - bash Task2-ProcessFile.sh -m
+  - echo "=============================="
+  
 
 notifications:
   email:
