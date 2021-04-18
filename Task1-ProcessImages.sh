@@ -102,11 +102,12 @@ WaterMark(){
 }
 
 Prefix(){
-    prefix=$2
+   prefix=$2
     for img in "$1"/*; do
-        mv "${img}" "$prefix""${img}"
+        name=${img##*/}
+        new_name=$1"/"${prefix}${name}
+        mv "${img}" "${new_name}"
     done
-    exit 0
 }
 
 Suffix(){
